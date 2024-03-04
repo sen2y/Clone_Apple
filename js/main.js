@@ -1,7 +1,7 @@
 // 장바구니 !
 
-basketStarterEl = document.querySelector("header .basket-starter");
-basketEl = basketStarterEl.querySelector(".basket");
+const basketStarterEl = document.querySelector("header .basket-starter");
+const basketEl = basketStarterEl.querySelector(".basket");
 
 basketStarterEl.addEventListener("click", function (event) {
   event.stopPropagation();
@@ -29,15 +29,21 @@ function hideBasket() {
 }
 
 // 검색 !
-headerEl = document.querySelector("header");
-searchStarterEl = headerEl.querySelector(".search-starter");
-searchWrapEl = headerEl.querySelector(".search-wrap");
-searchCloserEl = searchWrapEl.querySelector(".search-closer");
-shadowEl = searchWrapEl.querySelector(".shadow");
-headerMenuEls = [...document.querySelectorAll("ul.menu > li")];
-searchAutoEls = [...searchWrapEl.querySelectorAll("li")];
+const headerEl = document.querySelector("header");
+const searchStarterEl = headerEl.querySelector(".search-starter");
+const searchWrapEl = headerEl.querySelector(".search-wrap");
+const searchCloserEl = searchWrapEl.querySelector(".search-closer");
+const shadowEl = searchWrapEl.querySelector(".shadow");
+const headerMenuEls = [...document.querySelectorAll("ul.menu > li")];
+const searchAutoEls = [...searchWrapEl.querySelectorAll("li")];
+const searchInputEl = searchWrapEl.querySelector("input");
 
-searchStarterEl.addEventListener("click", showSearch);
+searchStarterEl.addEventListener("click", function () {
+  showSearch();
+  setTimeout(function () {
+    searchInputEl.focus();
+  }, 600);
+});
 
 searchCloserEl.addEventListener("click", hideSearch);
 
@@ -53,6 +59,7 @@ function hideSearch() {
     el.style.transitionDelay = (0.4 * index) / searchAutoEls.length + "s";
   });
   searchAutoEls.reverse();
+  searchInputEl.value = "";
 }
 
 function showSearch() {
