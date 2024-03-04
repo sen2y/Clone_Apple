@@ -7,27 +7,28 @@ body {
 
 /* Header */
 header {
-  background-color: yellow;
 }
 
 header .inner {
-  background-color: green;
   width: 1440px;
   overflow: hidden;
   margin: 0 auto;
 }
 
 header ul.menu {
-  display: flex;
+  height: 44px;
   justify-content: space-between;
+  display: flex;
 }
 
 header ul.menu li {
-  background-color: tomato;
+  border: 4px solid tomato;
+  display: flex;
 }
 
 header ul.menu li a {
-  background-color: skyblue;
+  display: flex;
+  align-items: center;
+  border: 4px solid skyblue;
   padding: 0 10px;
-  border: 1px solid #000;
 }
