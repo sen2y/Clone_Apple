@@ -35,7 +35,7 @@ searchWrapEl = headerEl.querySelector(".search-wrap");
 searchCloserEl = searchWrapEl.querySelector(".search-closer");
 shadowEl = searchWrapEl.querySelector(".shadow");
 headerMenuEls = [...document.querySelectorAll("ul.menu > li")];
-// searchTextEl = [...searchWrapEl.querySelectorAll("textfield")]
+searchAutoEls = [...searchWrapEl.querySelectorAll("li")];
 
 searchStarterEl.addEventListener("click", showSearch);
 
@@ -49,6 +49,10 @@ function hideSearch() {
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (0.4 * index) / headerMenuEls.length + "s";
   });
+  searchAutoEls.reverse().forEach(function (el, index) {
+    el.style.transitionDelay = (0.4 * index) / searchAutoEls.length + "s";
+  });
+  searchAutoEls.reverse();
 }
 
 function showSearch() {
@@ -57,5 +61,8 @@ function showSearch() {
   console.log(headerMenuEls);
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (0.4 * index) / headerMenuEls.length + "s";
+  });
+  searchAutoEls.forEach(function (el, index) {
+    el.style.transitionDelay = (0.4 * index) / searchAutoEls.length + "s";
   });
 }
