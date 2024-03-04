@@ -1,0 +1,33 @@
+body {
+  font-size: 16px;
+  line-height: 1;
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  word-break: keep-all;
+}
+
+/* Header */
+header {
+  background-color: yellow;
+}
+
+header .inner {
+  background-color: green;
+  width: 1440px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+header ul.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+header ul.menu li {
+  background-color: tomato;
+}
+
+header ul.menu li a {
+  background-color: skyblue;
+  padding: 0 10px;
+  border: 1px solid #000;
+}
