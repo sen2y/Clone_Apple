@@ -64,7 +64,7 @@ img {
   font-size: 11px;
   line-height: 1;
   color: var(--color-white);
-  background-color:  var(--color-link)
+  background-color: var(--color-link);
   cursor: pointer;
 }
 
@@ -503,4 +503,28 @@ nav .menu li.active a:hover {
 
 .hero .link a {
   font-weight: 500;
+}
+
+/* Power */
+
+.power {
+  margin-top: 110px;
+}
+
+.power .multiple-apps h1 {
+  width: 500px;
+  height: 280px;
+  background-image: url("../images/power_headline.png");
+  transform: translate(104px, 0);
+}
+
+.power .multiple-apps .figures {
+  height: 773px;
+}
+
+.power .multiple-apps figcaption {
+  width: 138px;
+  height: 46px;
+  transform: translate(703px, -47px);
+  background-image: url("../images/power_multiple_apps_caption.png");
 }
