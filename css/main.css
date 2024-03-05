@@ -26,6 +26,7 @@ body {
   word-break: keep-all;
   user-select: none;
   color: var(--color-font);
+  overflow-x: hidden;
 }
 
 p {
@@ -106,8 +107,14 @@ a.link::after {
   content: " >";
 }
 
+/* Feature(Figures+Infos) */
+.feature {
+  display: flex;
+}
+
 /* Figures */
 .figures {
+  flex-grow: 1;
   position: relative;
 }
 .figures figure,
@@ -123,15 +130,53 @@ a.link::after {
   left: 0;
 }
 
+/* Infos */
+.infos {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+.infos.infos--center {
+  justify-content: center; /* 세로 중앙정렬 */
+}
+
+.infos.infos--end {
+  justify-content: flex-end; /* 세로 하단정렬 */
+}
+
+.info {
+  max-width: 340px;
+  margin-bottom: 24px;
+}
+
+.info .icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 0 -15px -30px;
+  background-image: url("../images/sprite_apps.png");
+}
+
+.info p {
+  font-size: 20.5px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.info
+
 /* Header */
 header {
   --header-height: 44px;
   background-color: var(--color-header);
   position: relative;
-  z-index: 11;
+  z-index: 9;
+  transition: 0.4s;
 }
 
 header .inner {
+  height: var(--header-height);
   max-width: 1020px; /* 1020px 이하일 경우, 자동으로 요소의 너비 화면에 맞춰지도록. */
 }
 
@@ -145,6 +190,7 @@ header ul.menu > li {
   display: flex;
   position: relative;
   transition: 0.4s;
+  cursor: pointer;
 }
 
 header ul.menu > li.apple-logo > a,
@@ -174,9 +220,10 @@ header ul.menu > li > a {
   opacity: 0.8;
   /* 밑줄제거 */
   text-decoration: none;
+  font-size: 11px;
 }
 
-header ul.menu > li > a:hover {
+header ul.menu > li:hover > a {
   opacity: 1;
 }
 
@@ -511,6 +558,7 @@ nav .menu li.active a:hover {
   margin-top: 110px;
 }
 
+/* Power / multiple apps */
 .power .multiple-apps h1 {
   width: 500px;
   height: 280px;
@@ -527,4 +575,48 @@ nav .menu li.active a:hover {
   height: 46px;
   transform: translate(703px, -47px);
   background-image: url("../images/power_multiple_apps_caption.png");
+}
+
+/* Power / arcade */
+.power .arcade {
+  margin-top: 55px;
+}
+
+.power .arcade .figures {
+  height: 600px;
+}
+
+.power .arcade figure {
+  transform: translate(-347px, -90px);
+}
+
+.power .arcade figcaption {
+  width: 150x;
+  height: 77px;
+  transform: translate(483px, 653px);
+  background-image: url("../images/power_arcade_caption.png");
+}
+
+/* Power / Create */
+.power .create {
+  margin-top: 55px;
+  display: flex;
+}
+
+.power .create .infos {
+}
+
+.power .create .figures {
+  height: 773px;
+}
+
+.power .create figure {
+  transform: translate(-25px, 50px);
+}
+
+.power .create figcaption {
+  width: 142px;
+  height: 46px;
+  transform: translate(543px, 908px);
+  background-image: url("../images/power_create_caption.png");
 }
