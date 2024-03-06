@@ -149,13 +149,20 @@ a.link::after {
 .info {
   max-width: 340px;
   margin-bottom: 24px;
+  transition: 1s;
+  transform: translate(0, 100px);
+  opacity: 0;
+}
+
+.info.show {
+  transform: translate(0, 0);
+  opacity: 1;
 }
 
 .info .icon {
   width: 100px;
   height: 100px;
   margin: 0 0 -15px -30px;
-
   animation: sprite-icon 3s steps(1) infinite;
 }
 
@@ -429,14 +436,14 @@ header {
 }
 
 header .inner {
-  height: var(--header-height);
+  height: 44px;
   max-width: 1020px; /* 1020px 이하일 경우, 자동으로 요소의 너비 화면에 맞춰지도록. */
 }
 
 header ul.menu {
-  height: var(--header-height);
-  justify-content: space-between;
   display: flex;
+  justify-content: space-between;
+  height: 44px;
 }
 
 header ul.menu > li {
@@ -580,7 +587,7 @@ header .search .textfield {
 
 header .search input {
   width: 100%;
-  height: var(--header-height);
+  height: 44px;
   padding: 0 40px;
   box-sizing: border-box;
   border: none;
@@ -592,7 +599,7 @@ header .search input {
 
 header .search .search-icon {
   width: 40px;
-  height: var(--header-height);
+  height: 44px;
   background-image: url("../images/header_search.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -605,7 +612,7 @@ header .search .search-icon {
 
 header .search .search-closer {
   width: 40px;
-  height: var(--header-height);
+  height: 44px;
   background-image: url("../images/header_close.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -628,7 +635,7 @@ header .search .autocompletes {
   border-radius: 0 0 18px 18px;
   box-sizing: border-box;
   position: absolute;
-  top: var(--header-height);
+  top: 44px;
   left: 0;
 }
 
