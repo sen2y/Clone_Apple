@@ -1161,14 +1161,37 @@ nav .menu li.active a:hover {
 }
 
 .environment .icon {
-  /* 이렇게 하면 margin-bottom: 20px 줬던게 묻히니 */
-  /* margin: 0 auto; */
+  /* margin: 0 auto; 이렇게 하면 margin-bottom: 20px 줬던게 묻히니 */
   margin-left: auto;
   margin-right: auto;
 }
 
 .environment h1 {
   color: #03a10e;
+}
+
+/* Accessory Shop */
+.accessory-shop {
+  background-color: var(--color-section);
+  text-align: center;
+}
+.accessory-shop .whitebox {
+  padding-bottom: 0;
+}
+.accessory-shop .inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.accessory-shop img {
+  margin-top: 50px;
+}
+
+/* Trade */
+.trade {
+  padding: 20px 20px 0;
+  background-color: var(--color-section);
+  text-align: center;
 }
 
 @keyframes sprite-icon {
