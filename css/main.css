@@ -19,7 +19,6 @@ html.fixed {
 }
 
 body {
-  height: 3000px;
   font-size: 16px;
   line-height: 1;
   font-family: "Roboto", "Noto Sans KR", sans-serif;
@@ -825,6 +824,44 @@ nav .menu li.active a:hover {
   height: 47px;
   background-image: url(../images/camera_edit_caption.png);
   transform: translate(27px, 905px);
+}
+
+/* WIreless */
+.wireless {
+  margin-top: 202px;
+}
+/* Wireless / facetime */
+.wireless .facetime h1 {
+  background-image: url("../images/wireless_headline.png");
+  width: 730px;
+  height: 330px;
+  transform: translate(104px, 0);
+}
+.wireless .facetime .figures {
+  height: 773px;
+}
+
+.wireless .facetime figure {
+  transform: translate(-68px, 0);
+}
+
+.wireless .facetime figcaption {
+  width: 139px;
+  height: 46px;
+  background-image: url(../images/wireless_facetime_caption.png);
+  transform: translate(843px, -49px);
+}
+
+/* Wireless / Files */
+.wireless .files figure {
+  transform: translate(34px, -34px);
+}
+
+.wireless .files figcaption {
+  width: 127px;
+  height: 46px;
+  background-image: url(../images/wireless_files_caption.png);
+  transform: translate(96px, 639px);
 }
 
 @keyframes sprite-icon {
