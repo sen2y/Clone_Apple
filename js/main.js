@@ -88,3 +88,20 @@ const els = document.querySelectorAll(".info");
 els.forEach(function (el) {
   io.observe(el);
 });
+
+// 비디오 컨트롤
+const playBtnEl = document.querySelector(".controller--play");
+const pauseBtnEl = document.querySelector(".controller--pause");
+const videoEl = document.querySelector("video");
+
+playBtnEl.addEventListener("click", function () {
+  playBtnEl.classList.add("hide");
+  pauseBtnEl.classList.remove("hide");
+  videoEl.play();
+});
+
+pauseBtnEl.addEventListener("click", function () {
+  pauseBtnEl.classList.add("hide");
+  playBtnEl.classList.remove("hide");
+  videoEl.pause();
+});
