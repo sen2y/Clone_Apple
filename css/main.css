@@ -424,7 +424,14 @@ a.link::after {
   line-height: 1.5;
 }
 
-.info
+.info a.link {
+  display: block;
+  margin-top: 44px;
+  font-size: 19.5px;
+}
+.info a:hover {
+  text-decoration: underline;
+}
 
 /* Header */
 header {
