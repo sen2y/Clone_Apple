@@ -73,3 +73,18 @@ function showSearch() {
     el.style.transitionDelay = (0.4 * index) / searchAutoEls.length + "s";
   });
 }
+
+// 요소의 가시성 관찰
+const io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (entry) {
+    if (!entry.isIntersecting) {
+      return;
+    }
+    entry.target.classList.add("show");
+  });
+});
+
+const els = document.querySelectorAll(".info");
+els.forEach(function (el) {
+  io.observe(el);
+});
