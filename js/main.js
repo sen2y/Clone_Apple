@@ -1,5 +1,6 @@
-// 장바구니 !
+import ipads from "../data/ipads.js";
 
+// 장바구니 !
 const basketStarterEl = document.querySelector("header .basket-starter");
 const basketEl = basketStarterEl.querySelector(".basket");
 
@@ -104,4 +105,35 @@ pauseBtnEl.addEventListener("click", function () {
   pauseBtnEl.classList.add("hide");
   playBtnEl.classList.remove("hide");
   videoEl.pause();
+});
+
+// '당신에게 맞는 iPad는? 렌더링!
+const itemsEl = document.querySelector("section.compare .items");
+ipads.forEach(function (ipad) {
+  // .createElement -> 요소를 js에서 생성
+  const itemEl = document.createElement("div");
+  itemEl.classList.add("item");
+
+  let colorList = "";
+  ipad.colors.forEach(function (color) {
+    colorList += `<li style="background-color: ${color}"></li>`;
+  });
+
+  itemEl.innerHTML = /* html */ `
+  <div class="thumbnail">
+    <img src="${ipad.thumbnail}" alt="${ipad.name}" />
+
+  </div>
+  <ul class="colors">
+    ${colorList}
+
+  </ul>
+  <h3 class="name">${ipad.name}</h3>
+  <p class="tagline">${ipad.tagline}</p>
+  <p class="price">₩${ipad.price.toLocaleString("kr")}</p>
+  <button class="btn">구입하기</button>
+  <a href="${ipad.url}" class="link">더 알아보기</a>
+  `;
+  // .appendChild -> 요소를 자식 요소로 추가
+  itemsEl.appendChild(itemEl);
 });
