@@ -25,7 +25,6 @@ body {
   word-break: keep-all;
   user-select: none;
   color: var(--color-font);
-  overflow-x: hidden;
 }
 
 p {
@@ -115,6 +114,48 @@ footer .navigations .map li a {
   color: var(--color-font-darkgray);
 }
 footer .navigations .map li a:hover {
+  text-decoration: underline;
+}
+
+footer .how-to-shop {
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--color-font-darkgray);
+}
+footer .how-to-shop a {
+  color: var(--color-link);
+}
+footer .how-to-shop a:hover {
+  text-decoration: underline;
+}
+footer .legal {
+  margin-top: 10px;
+  padding: 10px 0 40px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  gap: 50px;
+  font-size: 12px;
+  color: var(--color-font-darkgray);
+}
+footer .legal ul {
+  flex-grow: 1;
+  display: flex;
+  gap: 21px;
+}
+footer .legal ul li {
+  position: relative;
+}
+footer .legal ul li::after {
+  content: "|";
+  position: absolute;
+  right: -11px;
+  /* 글자가 아닌 라인 색상을 의미! */
+  color: var(--color-border);
+}
+footer .legal ul li:last-child::after {
+  display: none;
+}
+footer .legal ul li:hover a {
   text-decoration: underline;
 }
 
@@ -602,6 +643,11 @@ header.searching .search .search-icon,
 header.searching .search .autocompletes h3,
 header.searching .search .autocompletes li {
   transform: translate(0, 0);
+}
+
+/* Main */
+main {
+  overflow-x: hidden;
 }
 
 /* Navigation */

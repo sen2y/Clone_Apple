@@ -160,3 +160,6 @@ navigations.forEach(function (nav) {
 
   navigationsEl.appendChild(mapEl);
 });
+
+const thisYear = document.querySelector(".this-year");
+thisYear.textContent = new Date().getFullYear();
