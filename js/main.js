@@ -1,4 +1,5 @@
 import ipads from "../data/ipads.js";
+import navigations from "../data/navigations.js";
 
 // 장바구니 !
 const basketStarterEl = document.querySelector("header .basket-starter");
@@ -136,4 +137,26 @@ ipads.forEach(function (ipad) {
   `;
   // .appendChild -> 요소를 자식 요소로 추가
   itemsEl.appendChild(itemEl);
+});
+
+// 네비게이션 렌더링
+const navigationsEl = document.querySelector("footer .navigations");
+navigations.forEach(function (nav) {
+  const mapEl = document.createElement("div");
+  mapEl.classList.add("map");
+
+  let mapList = "";
+  nav.maps.forEach(function (map) {
+    mapList += `<li><a href="${map.url}">${map.name}</a></li>`;
+  });
+
+  mapEl.innerHTML = /* html */ `
+    <h3>
+    <span class="text">${nav.title}</span>
+    </h3>
+    <ul>
+      ${mapList}
+    </ul>`;
+
+  navigationsEl.appendChild(mapEl);
 });
