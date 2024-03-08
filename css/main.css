@@ -43,6 +43,12 @@ img {
   -webkit-user-drag: none;
 }
 
+sup {
+  margin-right: 6px;
+  font-size: 0.7em;
+  vertical-align: top;
+}
+
 /* Inner */
 .inner {
   max-width: 980px;
@@ -1253,32 +1259,59 @@ nav .menu li.active a:hover {
   font-size: 14px;
 }
 
-@media (max-width: 1000px) {
-  .compare .items {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 500px;
-    margin: 68px auto 34px;
-  }
+/* Footer */
+footer {
+  background-color: var(--color-section);
 }
 
-@media (max-width: 740px) {
-  .compare .whitebox {
-    max-width: 430px;
-  }
-  .compare .items {
-    max-width: 190px;
-  }
-  .compare .item {
-    border-bottom: none;
-  }
-  .compare .links {
-    padding-top: 40px;
-    border-top: 1px solid var(--color-border);
-  }
-  .compare a.link {
-    margin-top: 0;
-  }
+/* Footer / buy-info */
+
+footer .buy-info {
+  padding: 76px 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  text-align: center;
+}
+
+footer .buy-info .icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 10px;
+}
+
+footer .buy-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+footer .buy-info p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+footer .buy-info a.link {
+  font-size: 14px;
+}
+
+/* Footer / Warning */
+footer .warning {
+  padding: 18px 0 10px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+footer .warning ol {
+  list-style: decimal; /* resect css를 했기에, 숫자로 표시하는걸 다시 넣어줘야 한다. */
+  padding-left: 16px;
+}
+
+footer .warning li {
+  margin-bottom: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--color-font-darkgray);
 }
 
 @keyframes sprite-icon {
