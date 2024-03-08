@@ -1253,32 +1253,38 @@ nav .menu li.active a:hover {
   font-size: 14px;
 }
 
-@media (max-width: 1000px) {
-  .compare .items {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 500px;
-    margin: 68px auto 34px;
-  }
+/* Footer */
+footer {
+  background-color: var(--color-section);
 }
 
-@media (max-width: 740px) {
-  .compare .whitebox {
-    max-width: 430px;
-  }
-  .compare .items {
-    max-width: 190px;
-  }
-  .compare .item {
-    border-bottom: none;
-  }
-  .compare .links {
-    padding-top: 40px;
-    border-top: 1px solid var(--color-border);
-  }
-  .compare a.link {
-    margin-top: 0;
-  }
+footer .buy-info {
+  padding: 76px 0;
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  text-align: center;
+}
+
+footer .buy-info .icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 10px;
+}
+
+footer .buy-info h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+footer .buy-info p {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+footer .buy-info a.link {
+  font-size: 14px;
 }
 
 @keyframes sprite-icon {
