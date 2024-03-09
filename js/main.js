@@ -47,7 +47,10 @@ searchStarterEl.addEventListener("click", function () {
   }, 600);
 });
 
-searchCloserEl.addEventListener("click", hideSearch);
+searchCloserEl.addEventListener("click", function (event) {
+  event.stopPropagation();
+  hideSearch();
+});
 
 shadowEl.addEventListener("click", hideSearch);
 
@@ -84,15 +87,37 @@ function stopScroll() {
   document.documentElement.classList.add("fixed");
 }
 
-// 헤더 메뉴 토글 !
+// 헤더 메뉴 토글! [모바일]
 const menuStarterEl = document.querySelector("header .menu-starter");
-menuStarterEl.addEventListener("click", function () {
+menuStarterEl.addEventListener("click", () => {
   if (headerEl.classList.contains("menuing")) {
     headerEl.classList.remove("menuing");
+    searchInputEl.value = ""; // 검색어 초기화
     playScroll();
   } else {
     headerEl.classList.add("menuing");
     stopScroll();
+  }
+});
+
+// 헤더 검색! [모바일]
+const searchTextFieldEl = document.querySelector("header .textfield");
+const searchCancelEl = document.querySelector("header .search-canceler");
+searchTextFieldEl.addEventListener("click", () => {
+  headerEl.classList.add("searching--mobile");
+  searchInputEl.focus(); // 검색어 입력창에 포커스
+});
+searchCancelEl.addEventListener("click", () => {
+  headerEl.classList.remove("searching--mobile");
+});
+
+// 최적화, 검색중 화면 크기 변경 시 검색 모드 종료
+// 화면 크기가 달라졌을 때 검색 모드가 종료되도록 처리.
+window.addEventListener("resize", (event) => {
+  if (window.innerWidth <= 740) {
+    headerEl.classList.remove("searching");
+  } else {
+    headerEl.classList.remove("searching--mobile");
   }
 });
 

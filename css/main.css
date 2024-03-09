@@ -590,6 +590,10 @@ header .search .search-closer {
   cursor: pointer;
 }
 
+header .search .search-canceler {
+  display: none;
+}
+
 header .search .search-closer:hover {
   opacity: 1;
 }
@@ -714,6 +718,28 @@ header.searching .search .autocompletes li {
   header .search .textfield {
     border-radius: 10px;
     background-color: #1d1d1d;
+    transition: 0.2s;
+    /* width 값 auto에서 특정값으로 줄어들게 하면 transition이 먹히지않아. */
+    width: 100%;
+  }
+
+  header .search .search-closer {
+    display: none;
+  }
+
+  header .search .search-canceler {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--color-link);
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.4s;
+    visibility: hidden;
+    opacity: 0;
   }
 
   header .search .autocompletes {
@@ -722,6 +748,8 @@ header.searching .search .autocompletes li {
     background-color: transparent;
     visibility: hidden;
     opacity: 0;
+    transition: 0.3s;
+    transform: translate(0, -100px);
   }
 
   header .search .autocompletes ul li {
@@ -816,6 +844,28 @@ header.searching .search .autocompletes li {
     visibility: visible;
     opacity: 1;
     transform: translate(0, 0);
+  }
+
+  header.menuing.searching--mobile {
+    transform: translate(0, -30px);
+  }
+  header.menuing.searching--mobile .search .textfield {
+    width: calc(100% - 55px);
+  }
+  header.menuing.searching--mobile .search .autocompletes {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  header.menuing.searching--mobile .search .search-canceler {
+    visibility: visible;
+    opacity: 1;
+  }
+  header.menuing.searching--mobile .clone-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate((0, 100px));
   }
 }
 
