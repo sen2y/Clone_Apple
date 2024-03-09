@@ -656,6 +656,17 @@ header.searching .search .autocompletes li {
 }
 
 @media (max-width: 740px) {
+  header::before {
+    content: "";
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-header);
+    transition: 0.4s;
+  }
+
   header ul.menu > li {
     display: none;
   }
@@ -671,10 +682,32 @@ header.searching .search .autocompletes li {
     height: 1px;
     background-color: var(--color-white);
     margin-bottom: 6px;
+    transition: 0.4s;
   }
 
   header ul.menu > li.menu-starter span:last-child {
     margin-bottom: 0;
+  }
+  header.menuing {
+    background-color: var(--color-black);
+  }
+
+  header.menuing::before {
+    height: 100vh;
+    background-color: var(--color-black);
+  }
+
+  header.menuing ul.menu > li.menu-starter span:first-child {
+    transform: translate(0, 3.5px) rotate(45deg);
+  }
+
+  header.menuing ul.menu > li.menu-starter span:last-child {
+    transform: translate(0, -3.5px) rotate(-45deg);
+  }
+
+  header.menuing ul.menu > li.basket-starter {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -686,17 +719,18 @@ main {
 /* Navigation */
 nav {
   /* 부모요소: body */
+  --nav-height: 52px;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
-  z-index: 10; /* 항상 맨위에 쌓여야한다. */
+  z-index: 8; /* 항상 맨위에 쌓여야한다. */
 }
 
 nav .inner {
   max-width: 1000px;
-  height: 52px;
+  height: var(--nav-height);
   display: flex;
   align-items: center;
 }
