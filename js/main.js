@@ -47,13 +47,16 @@ searchStarterEl.addEventListener("click", function () {
   }, 600);
 });
 
-searchCloserEl.addEventListener("click", hideSearch);
+searchCloserEl.addEventListener("click", function (event) {
+  event.stopPropagation();
+  hideSearch();
+});
 
 shadowEl.addEventListener("click", hideSearch);
 
 function hideSearch() {
   headerEl.classList.remove("searching");
-  document.documentElement.classList.remove("fixed");
+  playScroll();
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (0.4 * index) / headerMenuEls.length + "s";
   });
@@ -66,7 +69,7 @@ function hideSearch() {
 
 function showSearch() {
   headerEl.classList.add("searching");
-  document.documentElement.classList.add("fixed");
+  stopScroll();
   console.log(headerMenuEls);
   headerMenuEls.reverse().forEach(function (el, index) {
     el.style.transitionDelay = (0.4 * index) / headerMenuEls.length + "s";
@@ -75,6 +78,48 @@ function showSearch() {
     el.style.transitionDelay = (0.4 * index) / searchAutoEls.length + "s";
   });
 }
+
+function playScroll() {
+  document.documentElement.classList.remove("fixed");
+}
+
+function stopScroll() {
+  document.documentElement.classList.add("fixed");
+}
+
+// 헤더 메뉴 토글! [모바일]
+const menuStarterEl = document.querySelector("header .menu-starter");
+menuStarterEl.addEventListener("click", () => {
+  if (headerEl.classList.contains("menuing")) {
+    headerEl.classList.remove("menuing");
+    searchInputEl.value = ""; // 검색어 초기화
+    playScroll();
+  } else {
+    headerEl.classList.add("menuing");
+    stopScroll();
+  }
+});
+
+// 헤더 검색! [모바일]
+const searchTextFieldEl = document.querySelector("header .textfield");
+const searchCancelEl = document.querySelector("header .search-canceler");
+searchTextFieldEl.addEventListener("click", () => {
+  headerEl.classList.add("searching--mobile");
+  searchInputEl.focus(); // 검색어 입력창에 포커스
+});
+searchCancelEl.addEventListener("click", () => {
+  headerEl.classList.remove("searching--mobile");
+});
+
+// 최적화, 검색중 화면 크기 변경 시 검색 모드 종료
+// 화면 크기가 달라졌을 때 검색 모드가 종료되도록 처리.
+window.addEventListener("resize", (event) => {
+  if (window.innerWidth <= 740) {
+    headerEl.classList.remove("searching");
+  } else {
+    headerEl.classList.remove("searching--mobile");
+  }
+});
 
 // 요소의 가시성 관찰
 const io = new IntersectionObserver(function (entries) {
