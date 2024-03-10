@@ -869,11 +869,6 @@ header.searching .search .autocompletes li {
   }
 }
 
-/* Main */
-main {
-  overflow-x: hidden;
-}
-
 /* Navigation */
 nav {
   /* 부모요소: body */
@@ -925,6 +920,122 @@ nav .menu li.active a {
 
 nav .menu li.active a:hover {
   color: var(--color-font);
+}
+
+@media (max-width: 740px) {
+  nav .shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-shadow);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  nav .contents-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    visibility: hidden;
+    transition: 0.4s;
+  }
+
+  nav .menu-toggler {
+    width: 30px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  nav .menu-toggler::before,
+  nav .menu-toggler::after {
+    content: "";
+    display: block; /* 가상요소는 기본적으로 인라인요소이기 때문에, 블록요소로 변경 */
+    width: 11px;
+    height: 1px;
+    background-color: var(--color-font-darkgray);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: 0.4s;
+  }
+
+  nav .menu-toggler::after {
+    transform: rotate(-40deg);
+    right: -9px;
+  }
+
+  nav .menu-toggler::before {
+    transform: rotate(40deg);
+    left: -9px;
+  }
+
+  nav .menu {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    padding: 10px 40px 30px;
+    box-sizing: border-box;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: (0, -50px);
+    transition: 0.4s;
+  }
+
+  nav .menu li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  nav .menu li:last-child {
+    border-bottom: none;
+  }
+
+  nav .menu li a {
+    padding: 16px 0;
+    font-size: 14px;
+  }
+
+  nav.menuing .shadow {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  nav.menuing .contents-bg {
+    visibility: visible;
+    height: 232px;
+  }
+
+  nav.menuing .menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  nav.menuing .menu-toggler::after {
+    transform: rotate(40deg);
+  }
+
+  nav.menuing .menu-toggler::before {
+    transform: rotate(-40deg);
+  }
+}
+
+/* Main */
+main {
+  overflow-x: hidden;
 }
 
 /* Hero */
