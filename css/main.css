@@ -1163,15 +1163,15 @@ main {
   .hero figure img {
     width: 540px;
   }
-  .hero figcaption .caption-camera {
+  .hero figure figcaption .caption-camera {
     /* scale을 사용하여 동일한 배수로 줄여야함. */
     /* translate를 통해 새로운 위치로 이동시킨다. */
     transform: scale(0.8) translate(-9px, 524px);
   }
-  .hero figcaption .caption-chip {
+  .hero figure figcaption .caption-chip {
     transform: scale(0.8) translate(510px, 422px);
   }
-  .hero figcaption .caption-storage {
+  .hero figure figcaption .caption-storage {
     transform: scale(0.8) translate(556px, 556px);
   }
   .hero h2 {
@@ -1202,17 +1202,17 @@ main {
   }
 
   /* 기존에 사용했던 이미지 대신 mobile 이미지로 변경 */
-  .hero figcaption .caption-camera {
+  .hero figure figcaption .caption-camera {
     width: 180px;
     height: 37px;
     background-image: url("../images/hero_ipad_caption_camera_mobile.png");
     /* transform: scale(.8)인 상태에서 이미지 변경했으니 1로 다시 조정 */
     transform: scale(1) translate(21px, 368px);
   }
-  .hero figcaption .caption-chip {
+  .hero figure figcaption .caption-chip {
     transform: scale(0.8) translate(248px, 42px);
   }
-  .hero figcaption .caption-storage {
+  .hero figure figcaption .caption-storage {
     transform: scale(0.8) translate(288px, 168px);
   }
   .hero h2 {
