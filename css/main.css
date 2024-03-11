@@ -286,39 +286,32 @@ a.link::after {
   position: relative;
   z-index: 1;
 }
-
 .infos.infos--center {
-  justify-content: center; /* 세로 중앙정렬 */
+  justify-content: center;
 }
-
 .infos.infos--end {
-  justify-content: flex-end; /* 세로 하단정렬 */
+  justify-content: flex-end;
 }
-
 .info {
-  max-width: 340px;
+  max-width: 330px;
   margin-bottom: 24px;
   transition: 1s;
   transform: translate(0, 100px);
   opacity: 0;
 }
-
 .info.show {
   transform: translate(0, 0);
   opacity: 1;
 }
-
 .infos--large .info {
   max-width: 410px;
 }
-
 .info .icon {
   width: 100px;
   height: 100px;
   margin: 0 0 -15px -30px;
   animation: sprite-icon 3s steps(1) infinite;
 }
-
 .info .icon.icon--chip {
   background-image: url("../images/sprite_chip.png");
 }
@@ -373,22 +366,16 @@ a.link::after {
 .info .icon.icon--covers {
   background-image: url("../images/sprite_covers.png");
 }
-
-.info .icon.icon--faster {
-}
-
 .info p {
-  font-size: 20.5px;
+  font-size: 21.5px;
   font-weight: 600;
   line-height: 1.5;
 }
-
 .info a.link {
   display: block;
   margin-top: 44px;
   font-size: 19.5px;
 }
-
 .info a:hover {
   text-decoration: underline;
 }
@@ -397,21 +384,17 @@ a.link::after {
   .info {
     max-width: 230px;
   }
-
   .infos--large .info {
     max-width: 288px;
   }
-
   .info .icon {
     transform: scale(0.8);
     margin: -30px 0 -24px -32px;
   }
-
   .info p {
     font-size: 19px;
     line-height: 1.4;
   }
-
   .info a.link {
     margin-top: 24px;
   }
@@ -1908,6 +1891,31 @@ main {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+@media (max-width: 1000px) {
+  .accessories {
+    margin-top: 120px;
+  }
+  .accessories h1 {
+    width: 384px;
+    height: 243px;
+  }
+  .accessories .figures {
+    height: 700px;
+  }
+  .accessories figure {
+    transform: translate(12px, 0);
+  }
+  .accessories figure img {
+    width: 712px;
+  }
+  .accessories figcaption .caption-memo {
+    transform: scale(0.8) translate(677px, -60px);
+  }
+  .accessories figcaption .caption-supports {
+    transform: scale(0.8) translate(101px, 650px);
+  }
 }
 
 /* iPadOS */
