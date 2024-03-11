@@ -354,6 +354,9 @@ a.link::after {
 .info .icon.icon--lte {
   background-image: url("../images/sprite_lte.png");
 }
+.info .icon.icon--lte a {
+  width: 240px;
+}
 .info .icon.icon--pencil {
   background-image: url("../images/sprite_pencil.png");
 }
@@ -374,7 +377,7 @@ a.link::after {
 .info a.link {
   display: block;
   margin-top: 44px;
-  font-size: 19.5px;
+  font-size: 18.5px;
 }
 .info a:hover {
   text-decoration: underline;
