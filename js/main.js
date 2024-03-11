@@ -225,6 +225,7 @@ navigations.forEach(function (nav) {
   mapEl.innerHTML = /* html */ `
     <h3>
     <span class="text">${nav.title}</span>
+    <span class="icon">+</span>
     </h3>
     <ul>
       ${mapList}
@@ -235,3 +236,11 @@ navigations.forEach(function (nav) {
 
 const thisYear = document.querySelector(".this-year");
 thisYear.textContent = new Date().getFullYear();
+
+const mapEls = document.querySelectorAll("footer .navigations .map");
+mapEls.forEach(function (el) {
+  const h3El = el.querySelector("h3");
+  h3El.addEventListener("click", function () {
+    el.classList.toggle("active"); // 클릭한 요소에 active 클래스 추가/제거 add와 remove역할을 모두 함
+  });
+});
